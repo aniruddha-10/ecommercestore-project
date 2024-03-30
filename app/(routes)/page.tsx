@@ -1,7 +1,6 @@
 import getBillboard from "@/actions/get-billboard";
 import Container from "@/components/ui/container";
 import Billboard from "@/components/billboard";
-
 export const revalidate = 0;
 
 const HomePage = async () => {
