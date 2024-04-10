@@ -1,4 +1,4 @@
-import getCategories from "@/actions/get-categories";
+
 import getCategory from "@/actions/get-category";
 import getColors from "@/actions/get-colors";
 import getProducts from "@/actions/get-products";
@@ -42,9 +42,9 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
           data={category.billboard}
         />
         <div className="px-4 sm:px-6 lg:px-8 pb-24">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-x-8">
+          <div className="flex flex-col lg:flex-row">
             <MobileFilters sizes={sizes} colors={colors} />
-            <div className="hidden lg:block">
+            <div className="hidden lg:block lg:w-1/6">
               <Filter
                 valueKey="sizeId" 
                 name="Sizes" 
@@ -56,7 +56,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
                 data={colors}
               />
             </div>
-            <div className="mt-6 lg:col-span-4 lg:mt-0">
+            <div className="mt-6 lg:col-span-4 lg:mt-0 flex-grow">
               {products.length === 0 && <NoResults />}
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {products.map((item) => (
